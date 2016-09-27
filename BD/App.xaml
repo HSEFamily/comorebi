@@ -1,0 +1,143 @@
+﻿<Application x:Class="BD.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+<!-- Кнопка войти в StartPage.xaml, не доступна, пока юзер не введет данные-->
+        <ControlTemplate x:Key="ButtonControlTemplate1" TargetType="{x:Type Button}" >
+            <Grid x:Name="controlLayout">
+                <Rectangle RadiusX="20" RadiusY="50" x:Name="buttonSurface" Fill="#007543"/>
+                <Label  x:Name="buttonCaption" VerticalAlignment="Center" HorizontalAlignment="Center"
+        			FontSize="15" Content="Войти"  Background="#00000000" Foreground="White"/>
+            </Grid> 
+            <ControlTemplate.Triggers>
+                <Trigger  Property="IsMouseOver" Value="True" >
+                    <Setter TargetName="buttonSurface" Property="Fill" Value="#128755"></Setter>
+                    <Setter TargetName="buttonCaption" Property="Foreground" Value="#e8f2ee"></Setter>     
+                </Trigger>
+
+                <DataTrigger Binding="{Binding Text.Length, ElementName=firstNameTxtBox, UpdateSourceTrigger=PropertyChanged}" Value="0">
+                    <Setter Property="IsEnabled" Value="False"/>
+                    <Setter TargetName="buttonCaption" Property="Foreground" Value="#FF81A898"></Setter>
+                </DataTrigger>
+                
+                <DataTrigger Binding="{Binding Text.Length, ElementName=lastNameTxtBox, UpdateSourceTrigger=PropertyChanged}" Value="0">
+                    <Setter Property="IsEnabled" Value="False"/>
+                    <Setter TargetName="buttonCaption" Property="Foreground" Value="#FF81A898"></Setter>
+                </DataTrigger>
+
+            </ControlTemplate.Triggers>            
+        </ControlTemplate>
+
+
+<!-- Кнопка назад в RegistrationPage.xaml, доступна всегда-->
+        <ControlTemplate x:Key="RegistrationButtonBack" TargetType="{x:Type Button}" >
+            <Grid x:Name="controlLayout">
+                <Rectangle RadiusX="20" RadiusY="50" x:Name="buttonSurface" Fill="#007543"/>
+                <Label  x:Name="buttonCaption" VerticalAlignment="Center" HorizontalAlignment="Center"
+        			FontSize="15" Content="Назад"  Background="#00000000" Foreground="White"/>
+            </Grid>
+          
+        </ControlTemplate>
+
+
+        <ControlTemplate x:Key="RegistrationButtonReg" TargetType="{x:Type Button}" >
+            <Grid x:Name="controlLayout">
+                <Rectangle RadiusX="20" RadiusY="50" x:Name="buttonSurface" Fill="#007543"/>
+                <Label  x:Name="buttonCaption" VerticalAlignment="Center" HorizontalAlignment="Center"
+        			FontSize="15" Content="Сохранить"  Background="#00000000" Foreground="White"/>
+            </Grid>
+           
+        </ControlTemplate>
+
+
+
+        <ControlTemplate x:Key="ButtonControlTemplate2" TargetType="{x:Type Button}" >
+            <Grid x:Name="controlLayout">
+                <Rectangle  x:Name="buttonSurface" Fill="#00000000"/>
+                <TextBlock  x:Name="buttonCaption" VerticalAlignment="Center" HorizontalAlignment="Center"
+        			FontSize="13"  FontWeight="Medium"  Background="#00000000" Foreground="#007543" >
+                    Создать учетную запись
+                    </TextBlock>
+            </Grid>
+
+            <ControlTemplate.Triggers>
+                <Trigger  Property="IsMouseOver" Value="True" >
+                  
+                    <Setter TargetName="buttonCaption" Property="Foreground" Value="#FF4C9C7C" ></Setter>
+                    <Setter TargetName="buttonCaption" Property="TextDecorations" Value="Underline" > </Setter>
+                </Trigger>
+                <EventTrigger  RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Duration="0:0:0.3" Storyboard.TargetProperty="Foreground.Color" To="CornflowerBlue" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Duration="0:0:0.3" Storyboard.TargetProperty="Foreground.Color" To="White" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+
+        <Style x:Key="TextBoxStyle1"  TargetType="{x:Type TextBox}">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="bg" BorderBrush="#FFE2E2E2" BorderThickness="1">
+                            <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" TargetName="bg" Value="#FFE2E2E2"/>
+                                <Setter Property="BorderThickness" TargetName="bg" Value="1"/>
+                                
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="BorderBrush" TargetName="bg" Value="#FFE2E2E2"/>
+                                <Setter Property="BorderThickness" TargetName="bg" Value="1"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CtrTem" TargetType="{x:Type Border}">
+                        <Setter Property="BorderBrush" Value="#FFE2E2E2"  />
+                        <Style.Triggers>
+                     <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard >
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0:0:0.5" To="#128755" Storyboard.TargetProperty="BorderBrush.Color" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard HandoffBehavior="SnapshotAndReplace">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0:0:0.5" To="#FFE2E2E2" Storyboard.TargetProperty="BorderBrush.Color" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>                           
+                        </Style.Triggers>                  
+        </Style>
+
+
+
+
+    </Application.Resources>
+</Application>

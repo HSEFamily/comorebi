@@ -1,0 +1,36 @@
+﻿<Page x:Class="BD.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="500"
+         Height="350" Width="500"
+	Title="StartPage">
+
+
+    <Grid ShowGridLines="True">
+
+        <StackPanel >
+
+            <TextBlock  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35">Вход</TextBlock>
+            <Label  Content="Логин" MaxWidth="250" MinWidth="150" ></Label>
+            <Border x:Name="border" BorderThickness="1" MaxWidth="250" MinWidth="150" Style="{DynamicResource CtrTem}" >
+                <TextBox x:Name="firstNameTxtBox" BorderBrush="#FFE2E2E2" Style="{DynamicResource TextBoxStyle1}" />
+            </Border>
+            <Label Content="Пароль" MaxWidth="250" MinWidth="150"/>
+            <Border x:Name="border2" BorderThickness="1" MaxWidth="250" MinWidth="150" Style="{DynamicResource CtrTem}" >
+                <TextBox x:Name="lastNameTxtBox" BorderBrush="#FFE2E2E2" Style="{DynamicResource TextBoxStyle1}" />
+            </Border>
+            <Button  Cursor="Hand" Margin="20" Height="40" Width="120" x:Name="Signin" Content="Войти"  
+                     ClickMode="Press"  Template="{DynamicResource ButtonControlTemplate1}" Click="Signin_Click" >
+            </Button>
+
+        </StackPanel>
+
+
+        <Button Margin="20" Cursor="Hand" Height="30" Width="170" VerticalAlignment="Bottom" HorizontalAlignment="Left" BorderBrush="Transparent" Template="{DynamicResource ButtonControlTemplate2}" Click="Button_Click"/>
+
+    </Grid>
+
+</Page>

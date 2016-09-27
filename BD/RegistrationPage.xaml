@@ -1,0 +1,55 @@
+﻿<Page x:Class="BD.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="500"
+       Height="350" Width="500"
+	Title="RegistrationPage">
+
+
+
+
+        <Grid ShowGridLines="True">
+
+            <StackPanel  >
+
+            <Label  Content="Имя" MaxWidth="250" MinWidth="150" ></Label>
+            <Border x:Name="borderName" BorderThickness="1" MaxWidth="250" MinWidth="150" Style="{DynamicResource CtrTem}" >
+                <TextBox x:Name="nameTxtBox" BorderBrush="#FFE2E2E2" Style="{DynamicResource TextBoxStyle1}" TextChanged="nameTxtBox_TextChanged" />
+            </Border>
+            <Label  Content="Фамилия" MaxWidth="250" MinWidth="150" ></Label>
+            <Border x:Name="borderSecondName" BorderThickness="1" MaxWidth="250" MinWidth="150" Style="{DynamicResource CtrTem}" >
+                <TextBox x:Name="textBoxSecondName" BorderBrush="#FFE2E2E2" Style="{DynamicResource TextBoxStyle1}" />
+            </Border>
+
+
+            <Label  Content="Логин" MaxWidth="250" MinWidth="150" ></Label>
+                <Border x:Name="border" BorderThickness="1" MaxWidth="250" MinWidth="150" Style="{DynamicResource CtrTem}" >
+                    <TextBox x:Name="firstNameTxtBox" BorderBrush="#FFE2E2E2" Style="{DynamicResource TextBoxStyle1}" />
+                </Border>
+                <Label Content="Пароль" MaxWidth="250" MinWidth="150"/>
+            <Border x:Name="border2" BorderThickness="1" MaxWidth="250" MinWidth="150" Style="{DynamicResource CtrTem}" >
+                <TextBox x:Name="lastNameTxtBox" BorderBrush="#FFE2E2E2" Style="{DynamicResource TextBoxStyle1}" />
+            </Border>
+
+        </StackPanel>
+            
+               <Button  Cursor="Hand" Margin="0,150,150,0" Height="40" Width="120" x:Name="Back" 
+                     ClickMode="Press"  Template="{DynamicResource RegistrationButtonBack}" Click="Back_Click" >
+                    
+                </Button>
+
+            <Button  Cursor="Hand" Margin="0,150,-150,0" Height="40" Width="120" x:Name="Next" 
+                     ClickMode="Press"  Template="{DynamicResource RegistrationButtonReg}" Click="Next_Click" >
+
+            </Button>
+                
+
+
+            
+
+        </Grid>
+
+</Page>

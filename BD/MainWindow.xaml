@@ -1,0 +1,58 @@
+﻿<Window x:Class="BD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Komorebi" Height="450" Width="500" WindowStartupLocation="CenterScreen" BorderThickness="0" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize">
+   <!-- <Window.Resources>
+        <ResourceDictionary>            
+            <Style x:Key="WhiteStyle" TargetType="{x:Type Control}">
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontFamily" Value="Adobe Caslon Pro" />
+                <Setter Property="FontStyle" Value="Normal" />
+            </Style>
+
+          
+
+        </ResourceDictionary>
+
+        
+    </Window.Resources>
+
+
+    <Grid ShowGridLines="True">
+        
+        <StackPanel Margin="40">
+            
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35">Вход</TextBlock>
+            <Label  Content="Логин" MaxWidth="250" MinWidth="150" ></Label>            
+            <Border x:Name="border" BorderThickness="1" MaxWidth="250" MinWidth="150" Style="{DynamicResource CtrTem}" >
+                <TextBox x:Name="firstNameTxtBox" BorderBrush="#FFE2E2E2" Style="{DynamicResource TextBoxStyle1}" />            
+            </Border>
+            <Label Content="Пароль" MaxWidth="250" MinWidth="150"/>           
+            <Border x:Name="border2" BorderThickness="1" MaxWidth="250" MinWidth="150" Style="{DynamicResource CtrTem}" >
+                <TextBox x:Name="lastNameTxtBox" BorderBrush="#FFE2E2E2" Style="{DynamicResource TextBoxStyle1}" />
+            </Border>
+            <Button  Cursor="Hand" Margin="20" Height="40" Width="120" x:Name="Signin" Content="Войти"  
+                     ClickMode="Press"  Template="{DynamicResource ButtonControlTemplate1}" Click="Signin_Click" > 
+            </Button>
+
+            
+          
+
+
+        </StackPanel>
+      
+
+        <Button Cursor="Hand" Margin="20" Height="40" Width="170" VerticalAlignment="Bottom" HorizontalAlignment="Left" BorderBrush="Transparent" Template="{DynamicResource ButtonControlTemplate2}" Click="Button_Click"/>
+       
+    </Grid>-->
+
+    <Frame Name="frmMainContent" Height="450" Width="500"     
+         NavigationUIVisibility="Hidden" Source="StartPage.xaml">
+    </Frame>
+
+
+
+</Window>
+
+    
